@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1426F3A7223D8863006F3B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426F3A6223D8863006F3B41 /* AppDelegate.swift */; };
+		1426F3A9223D8863006F3B41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426F3A8223D8863006F3B41 /* ViewController.swift */; };
+		1426F3AC223D8863006F3B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426F3AA223D8863006F3B41 /* Main.storyboard */; };
+		1426F3AF223D8863006F3B41 /* CardinalsStoryteller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1426F3AD223D8863006F3B41 /* CardinalsStoryteller.xcdatamodeld */; };
+		1426F3B1223D8865006F3B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1426F3B0223D8865006F3B41 /* Assets.xcassets */; };
+		1426F3B4223D8865006F3B41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426F3B2223D8865006F3B41 /* LaunchScreen.storyboard */; };
+		1426F3BF223D8865006F3B41 /* CardinalsStorytellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426F3BE223D8865006F3B41 /* CardinalsStorytellerTests.swift */; };
+		1426F3CA223D8865006F3B41 /* CardinalsStorytellerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426F3C9223D8865006F3B41 /* CardinalsStorytellerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1426F3BB223D8865006F3B41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1426F39B223D8863006F3B41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1426F3A2223D8863006F3B41;
+			remoteInfo = CardinalsStoryteller;
+		};
+		1426F3C6223D8865006F3B41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1426F39B223D8863006F3B41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1426F3A2223D8863006F3B41;
+			remoteInfo = CardinalsStoryteller;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1426F3A3223D8863006F3B41 /* CardinalsStoryteller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardinalsStoryteller.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1426F3A6223D8863006F3B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1426F3A8223D8863006F3B41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1426F3AB223D8863006F3B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1426F3AE223D8863006F3B41 /* CardinalsStoryteller.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardinalsStoryteller.xcdatamodel; sourceTree = "<group>"; };
+		1426F3B0223D8865006F3B41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1426F3B3223D8865006F3B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1426F3B5223D8865006F3B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1426F3BA223D8865006F3B41 /* CardinalsStorytellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardinalsStorytellerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1426F3BE223D8865006F3B41 /* CardinalsStorytellerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardinalsStorytellerTests.swift; sourceTree = "<group>"; };
+		1426F3C0223D8865006F3B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1426F3C5223D8865006F3B41 /* CardinalsStorytellerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardinalsStorytellerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1426F3C9223D8865006F3B41 /* CardinalsStorytellerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardinalsStorytellerUITests.swift; sourceTree = "<group>"; };
+		1426F3CB223D8865006F3B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1426F3A0223D8863006F3B41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1426F3B7223D8865006F3B41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1426F3C2223D8865006F3B41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1426F39A223D8863006F3B41 = {
+			isa = PBXGroup;
+			children = (
+				1426F3A5223D8863006F3B41 /* CardinalsStoryteller */,
+				1426F3BD223D8865006F3B41 /* CardinalsStorytellerTests */,
+				1426F3C8223D8865006F3B41 /* CardinalsStorytellerUITests */,
+				1426F3A4223D8863006F3B41 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1426F3A4223D8863006F3B41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1426F3A3223D8863006F3B41 /* CardinalsStoryteller.app */,
+				1426F3BA223D8865006F3B41 /* CardinalsStorytellerTests.xctest */,
+				1426F3C5223D8865006F3B41 /* CardinalsStorytellerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1426F3A5223D8863006F3B41 /* CardinalsStoryteller */ = {
+			isa = PBXGroup;
+			children = (
+				1426F3A6223D8863006F3B41 /* AppDelegate.swift */,
+				1426F3A8223D8863006F3B41 /* ViewController.swift */,
+				1426F3AA223D8863006F3B41 /* Main.storyboard */,
+				1426F3B0223D8865006F3B41 /* Assets.xcassets */,
+				1426F3B2223D8865006F3B41 /* LaunchScreen.storyboard */,
+				1426F3B5223D8865006F3B41 /* Info.plist */,
+				1426F3AD223D8863006F3B41 /* CardinalsStoryteller.xcdatamodeld */,
+			);
+			path = CardinalsStoryteller;
+			sourceTree = "<group>";
+		};
+		1426F3BD223D8865006F3B41 /* CardinalsStorytellerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1426F3BE223D8865006F3B41 /* CardinalsStorytellerTests.swift */,
+				1426F3C0223D8865006F3B41 /* Info.plist */,
+			);
+			path = CardinalsStorytellerTests;
+			sourceTree = "<group>";
+		};
+		1426F3C8223D8865006F3B41 /* CardinalsStorytellerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1426F3C9223D8865006F3B41 /* CardinalsStorytellerUITests.swift */,
+				1426F3CB223D8865006F3B41 /* Info.plist */,
+			);
+			path = CardinalsStorytellerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1426F3A2223D8863006F3B41 /* CardinalsStoryteller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1426F3CE223D8865006F3B41 /* Build configuration list for PBXNativeTarget "CardinalsStoryteller" */;
+			buildPhases = (
+				1426F39F223D8863006F3B41 /* Sources */,
+				1426F3A0223D8863006F3B41 /* Frameworks */,
+				1426F3A1223D8863006F3B41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardinalsStoryteller;
+			productName = CardinalsStoryteller;
+			productReference = 1426F3A3223D8863006F3B41 /* CardinalsStoryteller.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1426F3B9223D8865006F3B41 /* CardinalsStorytellerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1426F3D1223D8865006F3B41 /* Build configuration list for PBXNativeTarget "CardinalsStorytellerTests" */;
+			buildPhases = (
+				1426F3B6223D8865006F3B41 /* Sources */,
+				1426F3B7223D8865006F3B41 /* Frameworks */,
+				1426F3B8223D8865006F3B41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1426F3BC223D8865006F3B41 /* PBXTargetDependency */,
+			);
+			name = CardinalsStorytellerTests;
+			productName = CardinalsStorytellerTests;
+			productReference = 1426F3BA223D8865006F3B41 /* CardinalsStorytellerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1426F3C4223D8865006F3B41 /* CardinalsStorytellerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1426F3D4223D8865006F3B41 /* Build configuration list for PBXNativeTarget "CardinalsStorytellerUITests" */;
+			buildPhases = (
+				1426F3C1223D8865006F3B41 /* Sources */,
+				1426F3C2223D8865006F3B41 /* Frameworks */,
+				1426F3C3223D8865006F3B41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1426F3C7223D8865006F3B41 /* PBXTargetDependency */,
+			);
+			name = CardinalsStorytellerUITests;
+			productName = CardinalsStorytellerUITests;
+			productReference = 1426F3C5223D8865006F3B41 /* CardinalsStorytellerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1426F39B223D8863006F3B41 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Jonah Eisenstock";
+				TargetAttributes = {
+					1426F3A2223D8863006F3B41 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					1426F3B9223D8865006F3B41 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1426F3A2223D8863006F3B41;
+					};
+					1426F3C4223D8865006F3B41 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1426F3A2223D8863006F3B41;
+					};
+				};
+			};
+			buildConfigurationList = 1426F39E223D8863006F3B41 /* Build configuration list for PBXProject "CardinalsStoryteller" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1426F39A223D8863006F3B41;
+			productRefGroup = 1426F3A4223D8863006F3B41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1426F3A2223D8863006F3B41 /* CardinalsStoryteller */,
+				1426F3B9223D8865006F3B41 /* CardinalsStorytellerTests */,
+				1426F3C4223D8865006F3B41 /* CardinalsStorytellerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1426F3A1223D8863006F3B41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426F3B4223D8865006F3B41 /* LaunchScreen.storyboard in Resources */,
+				1426F3B1223D8865006F3B41 /* Assets.xcassets in Resources */,
+				1426F3AC223D8863006F3B41 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1426F3B8223D8865006F3B41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1426F3C3223D8865006F3B41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1426F39F223D8863006F3B41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426F3A9223D8863006F3B41 /* ViewController.swift in Sources */,
+				1426F3A7223D8863006F3B41 /* AppDelegate.swift in Sources */,
+				1426F3AF223D8863006F3B41 /* CardinalsStoryteller.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1426F3B6223D8865006F3B41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426F3BF223D8865006F3B41 /* CardinalsStorytellerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1426F3C1223D8865006F3B41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1426F3CA223D8865006F3B41 /* CardinalsStorytellerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1426F3BC223D8865006F3B41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1426F3A2223D8863006F3B41 /* CardinalsStoryteller */;
+			targetProxy = 1426F3BB223D8865006F3B41 /* PBXContainerItemProxy */;
+		};
+		1426F3C7223D8865006F3B41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1426F3A2223D8863006F3B41 /* CardinalsStoryteller */;
+			targetProxy = 1426F3C6223D8865006F3B41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1426F3AA223D8863006F3B41 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1426F3AB223D8863006F3B41 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1426F3B2223D8865006F3B41 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1426F3B3223D8865006F3B41 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1426F3CC223D8865006F3B41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1426F3CD223D8865006F3B41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1426F3CF223D8865006F3B41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XY2NNC43DQ;
+				INFOPLIST_FILE = CardinalsStoryteller/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStoryteller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1426F3D0223D8865006F3B41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XY2NNC43DQ;
+				INFOPLIST_FILE = CardinalsStoryteller/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStoryteller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1426F3D2223D8865006F3B41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XY2NNC43DQ;
+				INFOPLIST_FILE = CardinalsStorytellerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardinalsStoryteller.app/CardinalsStoryteller";
+			};
+			name = Debug;
+		};
+		1426F3D3223D8865006F3B41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XY2NNC43DQ;
+				INFOPLIST_FILE = CardinalsStorytellerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardinalsStoryteller.app/CardinalsStoryteller";
+			};
+			name = Release;
+		};
+		1426F3D5223D8865006F3B41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XY2NNC43DQ;
+				INFOPLIST_FILE = CardinalsStorytellerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardinalsStoryteller;
+			};
+			name = Debug;
+		};
+		1426F3D6223D8865006F3B41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XY2NNC43DQ;
+				INFOPLIST_FILE = CardinalsStorytellerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardinalsStoryteller;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1426F39E223D8863006F3B41 /* Build configuration list for PBXProject "CardinalsStoryteller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1426F3CC223D8865006F3B41 /* Debug */,
+				1426F3CD223D8865006F3B41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1426F3CE223D8865006F3B41 /* Build configuration list for PBXNativeTarget "CardinalsStoryteller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1426F3CF223D8865006F3B41 /* Debug */,
+				1426F3D0223D8865006F3B41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1426F3D1223D8865006F3B41 /* Build configuration list for PBXNativeTarget "CardinalsStorytellerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1426F3D2223D8865006F3B41 /* Debug */,
+				1426F3D3223D8865006F3B41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1426F3D4223D8865006F3B41 /* Build configuration list for PBXNativeTarget "CardinalsStorytellerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1426F3D5223D8865006F3B41 /* Debug */,
+				1426F3D6223D8865006F3B41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1426F3AD223D8863006F3B41 /* CardinalsStoryteller.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1426F3AE223D8863006F3B41 /* CardinalsStoryteller.xcdatamodel */,
+			);
+			currentVersion = 1426F3AE223D8863006F3B41 /* CardinalsStoryteller.xcdatamodel */;
+			path = CardinalsStoryteller.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1426F39B223D8863006F3B41 /* Project object */;
+}
