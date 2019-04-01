@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SavedCharacters" representedClassName="SavedCharacters" syncable="YES" codeGenerationType="class">
+        <attribute name="characterName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="portraitString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="games" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SavedGames" inverseName="players" inverseEntity="SavedGames" syncable="YES"/>
+    </entity>
+    <entity name="SavedGames" representedClassName="SavedGames" syncable="YES" codeGenerationType="class">
+        <attribute name="gameName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saveDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" minCount="2" maxCount="2" deletionRule="Nullify" ordered="YES" destinationEntity="SavedCharacters" inverseName="games" inverseEntity="SavedCharacters" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SavedCharacters" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="SavedGames" positionX="169.46875" positionY="-17.6640625" width="128" height="118"/>
+    </elements>
 </model>
