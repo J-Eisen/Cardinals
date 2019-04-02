@@ -25,6 +25,7 @@
 		1488D116224FEE3300447E66 /* MainGameFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488D115224FEE3300447E66 /* MainGameFunctions.swift */; };
 		1488D118224FFE7000447E66 /* GameTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488D117224FFE7000447E66 /* GameTypes.swift */; };
 		1488D11A225007CA00447E66 /* UIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488D119225007CA00447E66 /* UIFunctions.swift */; };
+		14928EFA2251A8400099FF33 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14928EF92251A8400099FF33 /* InfoScreenViewController.swift */; };
 		14A69364224F1ADB00ADED7F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A69363224F1ADB00ADED7F /* WelcomeViewController.swift */; };
 		14A69366224F1B0200ADED7F /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A69365224F1B0200ADED7F /* NewGameViewController.swift */; };
 		14A69368224F247C00ADED7F /* GameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A69367224F247C00ADED7F /* GameTableViewController.swift */; };
@@ -77,6 +78,7 @@
 		1488D115224FEE3300447E66 /* MainGameFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameFunctions.swift; sourceTree = "<group>"; };
 		1488D117224FFE7000447E66 /* GameTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypes.swift; sourceTree = "<group>"; };
 		1488D119225007CA00447E66 /* UIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFunctions.swift; sourceTree = "<group>"; };
+		14928EF92251A8400099FF33 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
 		14A69363224F1ADB00ADED7F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		14A69365224F1B0200ADED7F /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		14A69367224F247C00ADED7F /* GameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewController.swift; sourceTree = "<group>"; };
@@ -183,11 +185,11 @@
 		1426F3D8223D890C006F3B41 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				14A6936B224F24E100ADED7F /* CharacterViewControllers */,
 				14D3A0E2224D734B00465549 /* Cells */,
+				14928EFB2251A84D0099FF33 /* MainGameVCs */,
+				14A6936C224F24FB00ADED7F /* GameVCs */,
+				14A6936B224F24E100ADED7F /* CharacterVCs */,
 				14A69363224F1ADB00ADED7F /* WelcomeViewController.swift */,
-				14A6936C224F24FB00ADED7F /* GameViewControllers */,
-				14A69369224F24AA00ADED7F /* MainGameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -218,23 +220,32 @@
 			path = DataStructs;
 			sourceTree = "<group>";
 		};
-		14A6936B224F24E100ADED7F /* CharacterViewControllers */ = {
+		14928EFB2251A84D0099FF33 /* MainGameVCs */ = {
+			isa = PBXGroup;
+			children = (
+				14A69369224F24AA00ADED7F /* MainGameViewController.swift */,
+				14928EF92251A8400099FF33 /* InfoScreenViewController.swift */,
+			);
+			path = MainGameVCs;
+			sourceTree = "<group>";
+		};
+		14A6936B224F24E100ADED7F /* CharacterVCs */ = {
 			isa = PBXGroup;
 			children = (
 				1426F3A8223D8863006F3B41 /* SelectCharacterViewController.swift */,
 				1426F3DD223DEE03006F3B41 /* NewCharacterViewController.swift */,
 				1426F3DF223DEF66006F3B41 /* PortraitCollectionViewController.swift */,
 			);
-			path = CharacterViewControllers;
+			path = CharacterVCs;
 			sourceTree = "<group>";
 		};
-		14A6936C224F24FB00ADED7F /* GameViewControllers */ = {
+		14A6936C224F24FB00ADED7F /* GameVCs */ = {
 			isa = PBXGroup;
 			children = (
 				14A69365224F1B0200ADED7F /* NewGameViewController.swift */,
 				14A69367224F247C00ADED7F /* GameTableViewController.swift */,
 			);
-			path = GameViewControllers;
+			path = GameVCs;
 			sourceTree = "<group>";
 		};
 		14D3A0E2224D734B00465549 /* Cells */ = {
@@ -411,6 +422,7 @@
 				1488D118224FFE7000447E66 /* GameTypes.swift in Sources */,
 				14A69366224F1B0200ADED7F /* NewGameViewController.swift in Sources */,
 				14A69368224F247C00ADED7F /* GameTableViewController.swift in Sources */,
+				14928EFA2251A8400099FF33 /* InfoScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

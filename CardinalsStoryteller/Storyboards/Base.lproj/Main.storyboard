@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="cardinalsLogo" image="Logo_Black_Large" translatesAutoresizingMaskIntoConstraints="NO" id="ifs-cM-bzM">
-                                <rect key="frame" x="155.5" y="279" width="64" height="64"/>
+                                <rect key="frame" x="155.5" y="232.5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ifs-cM-bzM" secondAttribute="height" multiplier="1:1" id="a4G-4T-qzA"/>
                                     <constraint firstAttribute="height" constant="64" id="aef-NX-aJx"/>
@@ -65,13 +65,13 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AVS-C8-2kZ" firstAttribute="centerX" secondItem="Ruh-bX-DUv" secondAttribute="centerX" id="486-xM-NWv"/>
-                            <constraint firstItem="RBy-eK-u4y" firstAttribute="top" secondItem="ifs-cM-bzM" secondAttribute="bottom" constant="64" id="Ew5-jF-fF1"/>
                             <constraint firstItem="Dt8-Dt-hnk" firstAttribute="top" secondItem="RBy-eK-u4y" secondAttribute="bottom" constant="32" id="L7E-SC-1u7"/>
                             <constraint firstItem="RBy-eK-u4y" firstAttribute="centerX" secondItem="Ruh-bX-DUv" secondAttribute="centerX" id="Ny7-lG-9KS"/>
                             <constraint firstItem="Dt8-Dt-hnk" firstAttribute="centerX" secondItem="Ruh-bX-DUv" secondAttribute="centerX" id="Yvi-Nu-9ZW"/>
                             <constraint firstItem="9eR-hN-wA4" firstAttribute="bottom" secondItem="AVS-C8-2kZ" secondAttribute="bottom" constant="100" id="ZPF-1l-U99"/>
                             <constraint firstItem="TXy-Bl-Yi5" firstAttribute="centerX" secondItem="Ruh-bX-DUv" secondAttribute="centerX" id="fMh-AI-kY8"/>
                             <constraint firstItem="ifs-cM-bzM" firstAttribute="centerX" secondItem="Ruh-bX-DUv" secondAttribute="centerX" id="hwI-og-vTh"/>
+                            <constraint firstItem="ifs-cM-bzM" firstAttribute="top" secondItem="TXy-Bl-Yi5" secondAttribute="bottom" constant="60" id="jA0-BZ-oJg"/>
                             <constraint firstItem="TXy-Bl-Yi5" firstAttribute="top" secondItem="9eR-hN-wA4" secondAttribute="top" constant="128" id="mTc-Nw-7jI"/>
                             <constraint firstItem="AVS-C8-2kZ" firstAttribute="top" secondItem="Dt8-Dt-hnk" secondAttribute="bottom" constant="32" id="vQE-vs-24h"/>
                         </constraints>
@@ -107,13 +107,13 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ZgB-jk-bAl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="DateLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhl-qa-KQn" userLabel="DateLabel">
                                                     <rect key="frame" x="307.5" y="54" width="51.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="portrait1" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-w1-N3S" userLabel="portrait1">
@@ -149,6 +149,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="i2k-g1-pUK" firstAttribute="leading" secondItem="vJL-z1-LHc" secondAttribute="trailing" constant="8" id="5qc-gS-Usw"/>
                                                 <constraint firstItem="B0G-w1-N3S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CVr-PC-pgW" secondAttribute="trailing" constant="16" id="5wP-uQ-1gt"/>
@@ -182,8 +183,11 @@
                                     <outlet property="delegate" destination="w3S-yc-WUt" id="uuT-nY-bFe"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89J-hU-s0X">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="89J-hU-s0X">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Load Game" id="OEo-hl-7Lo">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bEK-ib-bas">
@@ -200,7 +204,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="89J-hU-s0X" firstAttribute="top" secondItem="0Qu-Dk-7ff" secondAttribute="top" id="Dad-lG-mx7"/>
                             <constraint firstItem="jt1-aa-Kws" firstAttribute="top" secondItem="89J-hU-s0X" secondAttribute="bottom" id="FIU-0a-QJU"/>
@@ -225,8 +229,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN8-zW-hmR">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="JN8-zW-hmR">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="New Game" id="UXd-Ne-cDD">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="g5q-ZJ-xXS">
@@ -285,7 +292,7 @@
                             </label>
                             <pickerView contentMode="scaleToFill" restorationIdentifier="gameTypePicker" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Qk-ERh" userLabel="gameTypePicker">
                                 <rect key="frame" x="27.5" y="430" width="320" height="216"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mLP-4K-ytk" id="nSM-Ux-1HI"/>
                                     <outlet property="delegate" destination="mLP-4K-ytk" id="atB-Lm-5ca"/>
@@ -558,10 +565,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qt8-ib-2W6">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="qt8-ib-2W6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="vNQ-VA-H0f"/>
+                                    <navigationItem title="Title" id="vNQ-VA-H0f">
+                                        <barButtonItem key="leftBarButtonItem" title="Quit" id="4IO-6R-cuG"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="6g0-7Z-zNY"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="portrait1" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-XG-6x4" userLabel="portrait1">
@@ -679,6 +692,21 @@
             </objects>
             <point key="canvasLocation" x="1868" y="-626.53673163418296"/>
         </scene>
+        <!--Info Screen View Controller-->
+        <scene sceneID="NIl-ce-b4N">
+            <objects>
+                <viewController id="6m0-5h-gpb" customClass="InfoScreenViewController" customModule="CardinalsStoryteller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Zb-bn-EUA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FB1-H6-HdY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUX-WP-DD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2980" y="-627"/>
+        </scene>
         <!--Portrait Collection View Controller-->
         <scene sceneID="lPy-Vk-tam">
             <objects>
@@ -776,9 +804,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yxZ-hV-xGN"/>
-        <segue reference="daB-sI-BcV"/>
+        <segue reference="tzz-EW-M1i"/>
         <segue reference="lTH-we-j9X"/>
-        <segue reference="N5Q-rI-P6H"/>
-        <segue reference="7Le-jL-kAK"/>
+        <segue reference="BLb-dH-Paz"/>
+        <segue reference="rTd-2P-zGR"/>
     </inferredMetricsTieBreakers>
 </document>

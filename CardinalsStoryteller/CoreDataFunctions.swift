@@ -5,12 +5,14 @@
 //  Created by Jonah Eisenstock on 3/29/19.
 //  Copyright © 2019 Jonah Eisenstock. All rights reserved.
 //
-/*
+
 import UIKit
 import CoreData
 
-let gameEntityString = "SavedGames"
-let characterEntityString = "SavedCharacters"
+private let gameEntityString = "SavedGames"
+private let gameEntityKeyPaths: [String] = ["gameName", "players.SavedCharacters[0].id", "players.SavedCharacters[1].id", "saveDate", "type", "id"]
+private let characterEntityString = "SavedCharacters"
+private let characterEntityKeyPaths: [String] = ["characterName", "portraitString", "color", "id"]
 var saveDataCalled: Bool = false
 var managedContextChanged: Bool = false
 
@@ -31,76 +33,106 @@ func addGame(newGame: Game, player1: PlayerCharacter, player2: PlayerCharacter) 
     let savedGame = NSManagedObject(entity: entity, insertInto: managedContext)
     savedGame.setValue(newGame.gameName, forKeyPath: "gameName")
     savedGame.setValue(Date.init(), forKeyPath: "date")
-    savedGame.setValue(player1, forKeyPath: "players.source")
-    savedGame.setValue(player2, forKeyPath: "players.source")
-//    let savedPlayers = loadCharacter()
-//    savedPlayer1.setValue(game, forKeyPath: "games.source")
-//    let savedPlayer1 = loadCharacter()
-//    savedPlayer1.setValue(game, forKeyPath: "games.source")
+    savedGame.mutableOrderedSetValue(forKey: "players").add(player1)
+    savedGame.mutableOrderedSetValue(forKey: "players").add(player2)
+    savedGame.setValue(newGame.type, forKey: "type")
+    savedGame.setValue(newGame.id, forKey: "id")
     
     saveData()
 }
 
-func updateCharacter(updatedCharacter: PlayerCharacter){
-    let fetchedCharacter = fetchData(entityString: characterEntityString, filter: updatedCharacter.characterName, filterType: "characterName")?.last
-    fetchedCharacter?.setValue(updatedCharacter.characterName, forKey: "characterName")
-    fetchedCharacter?.setValue(updatedCharacter.portraitName, forKey: "portraitName")
+func updateCharacter(characterToUpdate: PlayerCharacter){
+    let fetchedCharacter = fetchData(entityString: characterEntityString, filter: characterToUpdate.id)?.last as! SavedCharacters
+    fetchedCharacter.characterName = characterToUpdate.characterName
+    fetchedCharacter.portraitString = characterToUpdate.portraitName
+    fetchedCharacter.color = Int64(characterToUpdate.color.rawValue)
+    fetchedCharacter.id = characterToUpdate.id
+    
+    if fetchedCharacter.games != nil {
+        for gamePlaying in fetchedCharacter.games! {
+            var found = false
+            for gameName in characterToUpdate.gamesPlaying {
+                if (gamePlaying as! SavedGames).gameName == gameName {
+                    found = true
+                }
+            }
+            if !found {
+                fetchedCharacter.addToGames(gamePlaying as! SavedGames)
+            }
+        }
+    }
     saveData()
 }
 
-func updateGame(updatedGame: Game) {
-    let fetchedGame = fetchData(entityString: gameEntityString, filter: updatedGame.gameName, filterType: "gameName")?.last
-    fetchedGame?.setValue(updatedGame.gameName, forKey: "gameName")
-    fetchedGame?.setValue(Date.init(), forKey: "saveDate")
-//    fetchedGame?.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+func updateGame(gameToUpdate: Game) {
+    let fetchedGame = fetchData(entityString: gameEntityString, filter: gameToUpdate.id)?.last as! SavedGames
+    
+    fetchedGame.gameName = gameToUpdate.gameName
+    fetchedGame.saveDate = Date.init()
+    fetchedGame.type = gameToUpdate.type
+    fetchedGame.id = gameToUpdate.id
+    
     saveData()
+}
+
+
+func setUpNewCharacter(_ fetchedCharacter: NSManagedObject) -> PlayerCharacter {
+    let gamesPlaying = fetchedCharacter.value(forKeyPath: "games.SavedGames") as! [SavedGames]
+    var gameIDs: [String] = []
+    for game in gamesPlaying {
+        if game.id != nil {
+            gameIDs.append(game.id!)
+        }
+    }
+    let newCharacter = PlayerCharacter.init(
+        characterName: fetchedCharacter.value(forKeyPath: characterEntityKeyPaths[0]) as! String,
+        portraitName: fetchedCharacter.value(forKeyPath: characterEntityKeyPaths[1]) as! String,
+        gamesPlaying: gameIDs,
+        characterColor: fetchedCharacter.value(forKeyPath: characterEntityKeyPaths[2]) as! Int,
+        id: fetchedCharacter.value(forKeyPath: characterEntityKeyPaths[3]) as! String)
+    return newCharacter
+}
+
+func setUpNewGame(_ fetchedGame: NSManagedObject) -> Game {
+    let newGame = Game.init(
+        gameName: fetchedGame.value(forKeyPath: gameEntityKeyPaths[0]) as! String,
+        player1: fetchedGame.value(forKeyPath: gameEntityKeyPaths[1]) as! String,
+        player2: fetchedGame.value(forKeyPath: gameEntityKeyPaths[2]) as! String,
+        saveDate: fetchedGame.value(forKeyPath: gameEntityKeyPaths[3]) as! Date,
+        type: fetchedGame.value(forKeyPath: gameEntityKeyPaths[4]) as! Int,
+        id: fetchedGame.value(forKeyPath: gameEntityKeyPaths[5]) as! String)
+    return newGame
 }
 
 func loadCharacterArray() -> [PlayerCharacter]! {
     var loadedCharacterArray: [PlayerCharacter] = []
     
-    if let fetchedCharacters = fetchData(entityString: characterEntityString, filter: nil, filterType: nil) {
+    if let fetchedCharacters = fetchData(entityString: characterEntityString, filter: nil) {
         if fetchedCharacters.count > 0 {
             for fetchedCharacter in fetchedCharacters {
-                let newCharacter = PlayerCharacter.init(
-                    characterName: fetchedCharacter.value(forKey: "characterName") as? String ?? "Default",
-                    portraitName: fetchedCharacter.value(forKey: "portraitName") as? String ?? "Default")
-                loadedCharacterArray.append(newCharacter)
+                loadedCharacterArray.append(setUpNewCharacter(fetchedCharacter))
             }
         }
     }
     return loadedCharacterArray
 }
 
-func loadCharacter(playerToLoad: PlayerCharacter) -> PlayerCharacter! {
-    guard let fetchedCharacter = fetchData(entityString: characterEntityString, filter: playerToLoad.characterName, filterType: "characterName")?.last else { return nil }
-    let loadedCharacter = PlayerCharacter.init(
-        characterName: fetchedCharacter.value(forKey: "characterName") as! String,
-        portraitName: fetchedCharacter.value(forKey: "portraitName") as! String)
-    return loadedCharacter
+func loadCharacter(playerID: String) -> PlayerCharacter! {
+    guard let fetchedCharacter = fetchData(entityString: characterEntityString, filter: playerID)?.last else { return nil }
+    return setUpNewCharacter(fetchedCharacter)
 }
 
-func loadGame(gameToLoad: Game) -> Game! {
-    guard let fetchedGame = fetchData(entityString: gameEntityString, filter: gameToLoad.gameName, filterType: "gameName")?.last else { return nil }
-    let loadedGame = Game.init(
-        saveDate: fetchedGame.value(forKey: "saveDate") as! Date,
-        gameName: fetchedGame.value(forKey: "gameName") as! String)
-    return loadedGame
+func loadGame(gameID: String) -> Game! {
+    guard let fetchedGame = fetchData(entityString: gameEntityString, filter: gameID)?.last else { return nil }
+    return setUpNewGame(fetchedGame)
 }
 
 func loadGameArray() -> [Game]! {
     var loadedGameArray: [Game] = []
-    
     if let fetchedGames = fetchData(entityString: gameEntityString, filter: nil) {
         if fetchedGames.count > 0 {
             for fetchedGame in fetchedGames {
-                let newGame = Game.init(
-                    gameName: fetchedGame.value(forKeyPath: "gameName") as! String,
-                    player1: fetchedGame.value(forKeyPath: "players.source") as! PlayerCharacter,
-                    player2: <#T##String#>,
-                    saveDate: fetchedGame.value(forKeyPath: "saveDate") as! Date,
-                    id: fetchedGame.value(forKey: "id") as! String)
-                loadedGameArray.append(newGame)
+                loadedGameArray.append(setUpNewGame(fetchedGame))
             }
         }
     }
@@ -150,4 +182,4 @@ func saveData() {
         managedContextChanged = managedContext.hasChanges
     }
 }
-*/
+
