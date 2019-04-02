@@ -66,15 +66,13 @@ func updateCharacter(characterToUpdate: PlayerCharacter){
 
 func updateGame(gameToUpdate: Game) {
     let fetchedGame = fetchData(entityString: gameEntityString, filter: gameToUpdate.id)?.last as! SavedGames
-    
     fetchedGame.gameName = gameToUpdate.gameName
     fetchedGame.saveDate = Date.init()
-    fetchedGame.type = gameToUpdate.type
+    fetchedGame.type = Int64(getType(typeName: gameToUpdate.type.typeName).rawValue)
     fetchedGame.id = gameToUpdate.id
     
     saveData()
 }
-
 
 func setUpNewCharacter(_ fetchedCharacter: NSManagedObject) -> PlayerCharacter {
     let gamesPlaying = fetchedCharacter.value(forKeyPath: "games.SavedGames") as! [SavedGames]

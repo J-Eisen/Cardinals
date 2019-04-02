@@ -17,6 +17,15 @@ func getGameType(type: Type) -> GameType {
     return gameType
 }
 
+func getType(typeName: String) -> Type! {
+    for index in 0...typeName.count{
+        if typeName == typeNames[index] {
+            return Type(rawValue: index)!
+        }
+    }
+    return nil
+}
+
 let typeNames: [String] = ["Fight", "Argument", "Chase", "Race", "Game"]
 private let buttonNames: [[String]] = [["Attack", "Feint", "Defend", "Dodge"],
                                        ["", "", "", ""],
