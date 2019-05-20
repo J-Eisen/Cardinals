@@ -16,13 +16,16 @@ private let characterEntityKeyPaths: [String] = ["characterName", "portraitStrin
 var saveDataCalled: Bool = false
 var managedContextChanged: Bool = false
 
+// MARK: - Saving Functions
+
 func addCharacter(newCharacter: PlayerCharacter){
     guard let managedContext = getManagedContext() else { return }
     let entity = NSEntityDescription.entity(forEntityName: characterEntityString, in: managedContext)!
     let savedCharacter = NSManagedObject(entity: entity, insertInto: managedContext)
     savedCharacter.setValue(newCharacter.characterName, forKeyPath: "characterName")
-    savedCharacter.setValue(newCharacter.portraitName, forKeyPath: "portraitName")
-    savedCharacter.setValue(newCharacter.id, forKey: "id")
+    savedCharacter.setValue(newCharacter.portraitName, forKeyPath: "portraitString")
+    savedCharacter.setValue(newCharacter.id, forKeyPath: "id")
+    savedCharacter.setValue(newCharacter.color.rawValue, forKeyPath: "color")
     
     saveData()
 }
@@ -74,12 +77,15 @@ func updateGame(gameToUpdate: Game) {
     saveData()
 }
 
+//MARK: Converting from NSManagedObject to Object
+
 func setUpNewCharacter(_ fetchedCharacter: NSManagedObject) -> PlayerCharacter {
-    let gamesPlaying = fetchedCharacter.value(forKeyPath: "games.SavedGames") as! [SavedGames]
     var gameIDs: [String] = []
-    for game in gamesPlaying {
-        if game.id != nil {
-            gameIDs.append(game.id!)
+    if let gamesPlaying = fetchedCharacter.value(forKeyPath: "games.SavedGames") as? [SavedGames] {
+        for game in gamesPlaying {
+            if game.id != nil {
+                gameIDs.append(game.id!)
+            }
         }
     }
     let newCharacter = PlayerCharacter.init(
@@ -101,6 +107,8 @@ func setUpNewGame(_ fetchedGame: NSManagedObject) -> Game {
         id: fetchedGame.value(forKeyPath: gameEntityKeyPaths[5]) as! String)
     return newGame
 }
+
+// MARK: - Loading Functions
 
 func loadCharacterArray() -> [PlayerCharacter]! {
     var loadedCharacterArray: [PlayerCharacter] = []
@@ -137,6 +145,9 @@ func loadGameArray() -> [Game]! {
     return loadedGameArray
 }
 
+// MARK: - Helper Functions
+
+// Fetch
 func fetchData(entityString: String, filter: String!) -> [NSManagedObject]? {
     var fetchedData: [NSManagedObject] = []
     
@@ -153,6 +164,8 @@ func fetchData(entityString: String, filter: String!) -> [NSManagedObject]? {
     return fetchedData
 }
 
+// Get Context
+
 func getManagedContext() -> NSManagedObjectContext! {
     guard testMode == true else {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -166,6 +179,8 @@ func getManagedContext() -> NSManagedObjectContext! {
     managedObjectContext.persistentStoreCoordinator = storeCoordinator
     return managedObjectContext
 }
+
+// Save Data
 
 func saveData() {
     if testMode != true {

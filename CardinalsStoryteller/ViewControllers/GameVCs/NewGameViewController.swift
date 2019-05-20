@@ -63,10 +63,11 @@ class NewGameViewController: UIViewController {
             let vc = segue.destination as! SelectCharacterViewController
             vc.characterSelectNumber = characterSelectNumber
             vc.lastVC = "NewGame"
+            vc.characterArray = loadCharacterArray()
         } else if segue.destination is MainGameViewController {
             let newGameType = getGameType(type: Type(rawValue: selectedGame)!)
             let newGame = Game.init(gameName: gameName, player1: player1.characterName, player2: player2.characterName, type: newGameType)
-//            addGame(newGame: newGame, player1: player1, player2: player2)
+            addGame(newGame: newGame, player1: player1, player2: player2)
             let vc = segue.destination as! MainGameViewController
             vc.game = newGame
             if player1 == nil {
@@ -97,6 +98,8 @@ class NewGameViewController: UIViewController {
     }
 }
 
+// MARK: - Picker View
+
 extension NewGameViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -117,6 +120,8 @@ extension NewGameViewController: UIPickerViewDelegate {
         selectedGame = row
     }
 }
+
+// MARK: - TextField Functions
 
 extension NewGameViewController: UITextFieldDelegate {
     

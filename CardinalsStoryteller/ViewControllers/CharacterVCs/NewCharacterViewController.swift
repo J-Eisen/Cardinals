@@ -38,8 +38,9 @@ class NewCharacterViewController: UIViewController {
         } else if segue.destination is SelectCharacterViewController {
             let vc = segue.destination as! SelectCharacterViewController
             if segue.identifier == saveSegueIdentifier {
-                vc.characterArray.append(makeNewCharacter())
+                addCharacter(newCharacter: makeNewCharacter())
             }
+            vc.characterArray = loadCharacterArray()
         }
     }
     

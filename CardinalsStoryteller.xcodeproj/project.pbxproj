@@ -21,6 +21,8 @@
 		145D31D4224ECB47000F3B17 /* CharacterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D31D3224ECB47000F3B17 /* CharacterStruct.swift */; };
 		145D31D7224ECCB0000F3B17 /* GameStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D31D6224ECCB0000F3B17 /* GameStruct.swift */; };
 		145D31D9224ECD72000F3B17 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D31D8224ECD72000F3B17 /* CoreDataFunctions.swift */; };
+		147ECEA8225E27DD0015B3C6 /* ScreenTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147ECEA7225E27DD0015B3C6 /* ScreenTransitionUITests.swift */; };
+		147ECEAA225E2B350015B3C6 /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147ECEA9225E2B350015B3C6 /* CoreDataTests.swift */; };
 		1488D114224FED6C00447E66 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488D113224FED6C00447E66 /* GameType.swift */; };
 		1488D116224FEE3300447E66 /* MainGameFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488D115224FEE3300447E66 /* MainGameFunctions.swift */; };
 		1488D118224FFE7000447E66 /* GameTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488D117224FFE7000447E66 /* GameTypes.swift */; };
@@ -74,6 +76,8 @@
 		145D31D3224ECB47000F3B17 /* CharacterStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStruct.swift; sourceTree = "<group>"; };
 		145D31D6224ECCB0000F3B17 /* GameStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStruct.swift; sourceTree = "<group>"; };
 		145D31D8224ECD72000F3B17 /* CoreDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunctions.swift; sourceTree = "<group>"; };
+		147ECEA7225E27DD0015B3C6 /* ScreenTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransitionUITests.swift; sourceTree = "<group>"; };
+		147ECEA9225E2B350015B3C6 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		1488D113224FED6C00447E66 /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		1488D115224FEE3300447E66 /* MainGameFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameFunctions.swift; sourceTree = "<group>"; };
 		1488D117224FFE7000447E66 /* GameTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTypes.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				1426F3BE223D8865006F3B41 /* CardinalsStorytellerTests.swift */,
+				147ECEA9225E2B350015B3C6 /* CoreDataTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				1426F3C9223D8865006F3B41 /* CardinalsStorytellerUITests.swift */,
+				147ECEA7225E27DD0015B3C6 /* ScreenTransitionUITests.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				TargetAttributes = {
 					1426F3A2223D8863006F3B41 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.GameCenter.iOS = {
 								enabled = 1;
@@ -342,10 +349,12 @@
 					};
 					1426F3B9223D8865006F3B41 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 1426F3A2223D8863006F3B41;
 					};
 					1426F3C4223D8865006F3B41 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 1426F3A2223D8863006F3B41;
 					};
 				};
@@ -430,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147ECEAA225E2B350015B3C6 /* CoreDataTests.swift in Sources */,
 				1426F3BF223D8865006F3B41 /* CardinalsStorytellerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147ECEA8225E27DD0015B3C6 /* ScreenTransitionUITests.swift in Sources */,
 				1426F3CA223D8865006F3B41 /* CardinalsStorytellerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,7 +617,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStoryteller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -624,7 +635,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStoryteller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -644,7 +655,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardinalsStoryteller.app/CardinalsStoryteller";
 			};
@@ -665,7 +676,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardinalsStoryteller.app/CardinalsStoryteller";
 			};
@@ -685,7 +696,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CardinalsStoryteller;
 			};
@@ -705,7 +716,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonaheisenstock.CardinalsStorytellerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CardinalsStoryteller;
 			};

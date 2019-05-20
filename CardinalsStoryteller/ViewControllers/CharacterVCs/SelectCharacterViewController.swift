@@ -19,6 +19,7 @@ class SelectCharacterViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var characterArray: [PlayerCharacter] = []
+    var selectedPlayers: Int!
     var selectedPlayer: Int!
     var tempCharacter: PlayerCharacter!
     var characterSelectNumber: Int!
@@ -26,7 +27,9 @@ class SelectCharacterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        characterArray = loadCharacterArray()
+        if characterArray.count < 1 {
+            characterArray = loadCharacterArray()
+        }
         collectionView.layoutIfNeeded()
         collectionView!.register(CharacterCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
     }
@@ -58,6 +61,9 @@ class SelectCharacterViewController: UIViewController {
     }
 }
 
+//MARK: - Collection View Functions
+
+//MARK: Collection View Set Up
 extension SelectCharacterViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characterArray.count
@@ -71,6 +77,8 @@ extension SelectCharacterViewController: UICollectionViewDataSource {
         return cell
     }
     
+    //// Header Set Up ////
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerReuseIdentifier, for: indexPath)
         header.isHidden = false
@@ -78,15 +86,21 @@ extension SelectCharacterViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: Cell Select Functions
 extension SelectCharacterViewController: UICollectionViewDelegate {
+    
+    //// Regular Cell Tap ////
+    
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! CharacterCell
-        if selectedPlayer != nil {
-            var lastIndexPath = indexPath
-            lastIndexPath.item = selectedPlayer
-            let lastCell = collectionView.cellForItem(at: lastIndexPath) as! CharacterCell
-            lastCell.bounds.size.width = smallCell
-            lastCell.bounds.size.height = smallCell
+        if characterSelectNumber == 1 && selectedPlayers != nil {
+            if selectedPlayer != nil {
+                var lastIndexPath = indexPath
+                lastIndexPath.item = selectedPlayer
+                let lastCell = collectionView.cellForItem(at: lastIndexPath) as! CharacterCell
+                lastCell.bounds.size.width = smallCell
+                lastCell.bounds.size.height = smallCell
+            }
         }
         selectedCell.bounds.size.width = largeCell
         selectedCell.bounds.size.height = largeCell
@@ -94,5 +108,13 @@ extension SelectCharacterViewController: UICollectionViewDelegate {
         selectedPlayer = indexPath.item
         return true
     }
-}
 
+    func selectPlayer(selectedPlayer: Int, indexPath: IndexPath, _ collectionView: UICollectionView) -> CharacterCell {
+        var lastIndexPath = indexPath
+        lastIndexPath.item = selectedPlayer
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! CharacterCell
+        //    let
+    
+        return selectedCell
+    }
+}
