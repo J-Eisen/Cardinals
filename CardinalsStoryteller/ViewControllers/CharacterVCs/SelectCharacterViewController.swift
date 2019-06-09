@@ -19,10 +19,10 @@ class SelectCharacterViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var characterArray: [PlayerCharacter] = []
-    var selectedPlayers: Int!
-    var selectedPlayer: Int!
-    var tempCharacter: PlayerCharacter!
-    var characterSelectNumber: Int!
+    var selectedCharacter: Int!
+    var player1: PlayerCharacter!
+    var player2: PlayerCharacter!
+    var playerSelectNumber: Int!
     var lastVC: String!
     
     override func viewDidLoad() {
@@ -41,13 +41,14 @@ class SelectCharacterViewController: UIViewController {
             if sender is UIBarButtonItem {
                 let button = sender as! UIBarButtonItem
                 if button.title == "Done" {
-                    tempCharacter = characterArray[characterSelectNumber]
+                    if playerSelectNumber == 1 {
+                        player1 = characterArray[selectedCharacter]
+                    } else if playerSelectNumber == 2 {
+                        player2 = characterArray[selectedCharacter]
+                    }
                 }
-            }
-            if characterSelectNumber == 1 {
-                vc.player1 = tempCharacter
-            } else if characterSelectNumber == 2 {
-                vc.player2 = tempCharacter
+                vc.player1 = player1
+                vc.player2 = player2
             }
         }
     }
@@ -93,10 +94,10 @@ extension SelectCharacterViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! CharacterCell
-        if characterSelectNumber == 1 && selectedPlayers != nil {
-            if selectedPlayer != nil {
+        if playerSelectNumber == 1 {
+            if selectedCharacter != nil {
                 var lastIndexPath = indexPath
-                lastIndexPath.item = selectedPlayer
+                lastIndexPath.item = selectedCharacter
                 let lastCell = collectionView.cellForItem(at: lastIndexPath) as! CharacterCell
                 lastCell.bounds.size.width = smallCell
                 lastCell.bounds.size.height = smallCell
@@ -105,16 +106,14 @@ extension SelectCharacterViewController: UICollectionViewDelegate {
         selectedCell.bounds.size.width = largeCell
         selectedCell.bounds.size.height = largeCell
         
-        selectedPlayer = indexPath.item
+        selectedCharacter = indexPath.item
         return true
     }
 
-    func selectPlayer(selectedPlayer: Int, indexPath: IndexPath, _ collectionView: UICollectionView) -> CharacterCell {
+    func selectPlayer(selectedCharacter: Int, indexPath: IndexPath, _ collectionView: UICollectionView) -> CharacterCell {
         var lastIndexPath = indexPath
-        lastIndexPath.item = selectedPlayer
+        lastIndexPath.item = selectedCharacter
         let selectedCell = collectionView.cellForItem(at: indexPath) as! CharacterCell
-        //    let
-    
         return selectedCell
     }
 }

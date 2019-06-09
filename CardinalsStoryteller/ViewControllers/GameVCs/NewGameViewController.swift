@@ -17,7 +17,7 @@ class NewGameViewController: UIViewController {
     @IBOutlet weak var characterName2Label: UILabel!
     @IBOutlet weak var gameNameTextField: UITextField!
     
-    var characterSelectNumber: Int!
+    var playerSelectNumber: Int!
     var player1: PlayerCharacter!
     var player2: PlayerCharacter!
     var gameName: String!
@@ -33,26 +33,31 @@ class NewGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if player1 != nil {
-            portrait1ImageView.image = UIImage.init(named: player1.portraitName)
-            portrait1ImageView.backgroundColor = getColor(color: player1.color)
-            characterName1Label.text = player1.characterName
-            characterName1Label.textColor = getColor(color: player1.color)
-        } else {
-            portrait1ImageView.image = UIImage.init(named: portraits[randNums.0])
-            characterName1Label.text = "Player 1"
-            characterName1Label.textColor = getColor(color: colors[randNums.0])
+        if player1 == nil {
+            player1.portraitName = portraits[randNums.0]
+            player1.characterName = "Player 1"
+            player1.color = colors[randNums.0]
         }
-        if player2 != nil {
-            portrait2ImageView.image = UIImage.init(named: player2.portraitName)
-            portrait2ImageView.backgroundColor = getColor(color: player2.color)
-            characterName2Label.text = player2.characterName
-            characterName2Label.textColor = getColor(color: player2.color)
-        } else {
-            portrait2ImageView.image = UIImage.init(named: portraits[randNums.1])
-            characterName2Label.text = "Player 2"
-            characterName2Label.textColor = getColor(color: colors[randNums.1])
+        if player2 == nil {
+            player2.portraitName = portraits[randNums.1]
+            player2.characterName = "Player 2"
+            player2.color = colors[randNums.1]
         }
+        initPlayers()
+    }
+    
+    func initPlayers(){
+        // Init Player1's Info
+        portrait1ImageView.image = UIImage.init(named: player1.portraitName)
+        portrait1ImageView.backgroundColor = getColor(color: player1.color)
+        characterName1Label.text = player1.characterName
+        characterName1Label.textColor = getColor(color: player1.color)
+        
+        // Init Player2's Info
+        portrait2ImageView.image = UIImage.init(named: player2.portraitName)
+        portrait2ImageView.backgroundColor = getColor(color: player2.color)
+        characterName2Label.text = player2.characterName
+        characterName2Label.textColor = getColor(color: player2.color)
     }
     
     // MARK: - Navigation
@@ -61,8 +66,10 @@ class NewGameViewController: UIViewController {
         gameName = gameNameTextField.text!
         if segue.destination is SelectCharacterViewController {
             let vc = segue.destination as! SelectCharacterViewController
-            vc.characterSelectNumber = characterSelectNumber
+            vc.playerSelectNumber = playerSelectNumber
             vc.lastVC = "NewGame"
+            vc.player1 = player1
+            vc.player2 = player2
             vc.characterArray = loadCharacterArray()
         } else if segue.destination is MainGameViewController {
             let newGameType = getGameType(type: Type(rawValue: selectedGame)!)
@@ -88,12 +95,12 @@ class NewGameViewController: UIViewController {
         print("X: \(tapLocation.x) | Y: \(tapLocation.y)")
         if (tapLocation.x >= portrait1ImageView.bounds.minX && tapLocation.x <= portrait1ImageView.bounds.maxX)
             && (tapLocation.y >= characterName1Label.bounds.minX && tapLocation.y <= portrait1ImageView.bounds.maxY) {
-            characterSelectNumber = 1
+            playerSelectNumber = 1
         } else if (tapLocation.x >= portrait2ImageView.bounds.minX && tapLocation.x <= portrait2ImageView.bounds.maxX)
             && (tapLocation.y >= characterName2Label.bounds.minX && tapLocation.y <= portrait2ImageView.bounds.maxY) {
-            characterSelectNumber = 2
+            playerSelectNumber = 2
         }
-        print("Character Select Number: \(String(describing: characterSelectNumber))")
+        print("Character Select Number: \(String(describing: playerSelectNumber))")
         performSegue(withIdentifier: segueIdentifier, sender: sender)
     }
 }
